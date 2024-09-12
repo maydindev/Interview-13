@@ -88,7 +88,9 @@ const CustomProgram = () => {
         <h2 className="text-2xl font-bold text-center mb-4">Fonksiyonum</h2>
         <ul className="list-none list-inside mb-20 text-center">
           {program.map((func, index) => (
-            <li className="m-5" key={index}>{func}</li>
+            <li className="m-5" key={index}>
+              {func}
+            </li>
           ))}
         </ul>
 
@@ -111,12 +113,14 @@ const CustomProgram = () => {
           </div>
         </form>
 
-        {result !== null && (
+        {
           <div className="text-center">
             <p className="text-xl font-semibold">Son Yürütme:</p>
-            <p className="text-xl text-gray-600 mt-2">{`${lastExec} -> Fonksiyonum -> ${result}\n`}</p>
+            <p className="text-xl text-gray-600 mt-2">{`${
+              lastExec ? lastExec : "?"
+            } -> Fonksiyonum -> ${result ? result : "?"}\n`}</p>
           </div>
-        )}
+        }
       </div>
     </div>
   );
